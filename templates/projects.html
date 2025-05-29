@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - Nagendra Sharma{% endblock %}
+
+{% block content %}
+<section class="projects-header py-5 bg-light">
+    <div class="container">
+        <h1 class="display-4 fw-bold">My Projects</h1>
+        <p class="lead">A showcase of my work, personal projects, and contributions.</p>
+    </div>
+</section>
+
+<section class="projects-content py-5">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="project-filter">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-primary active" data-filter="all">All</button>
+                        <button type="button" class="btn btn-outline-primary" data-filter="web">Web</button>
+                        <button type="button" class="btn btn-outline-primary" data-filter="mobile">Mobile</button>
+                        <button type="button" class="btn btn-outline-primary" data-filter="desktop">Desktop</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search projects..." id="projectSearch">
+                    <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-md-6 col-lg-4 mb-4 project-item">
+                <div class="card h-100">
+                    <img src="{{ url_for('static', filename='img/' + project.image) }}" class="card-img-top" alt="{{ project.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.description }}</p>
+                        <div class="technologies mb-3">
+                            {% for tech in project.technologies %}
+                            <span class="badge bg-secondary me-1">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ project.github }}" class="btn btn-outline-dark" target="_blank">
+                                <i class="fab fa-github me-1"></i> Code
+                            </a>
+                            <a href="{{ project.live_demo }}" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="project-cta py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">Interested in collaborating?</h2>
+        <p class="lead mb-4">I'm always open to discussing new projects or opportunities to be part of your vision.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-lg btn-primary">Get In Touch</a>
+    </div>
+</section>
+{% endblock %}

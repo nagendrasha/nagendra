@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+
+{% block title %}Skills - Nagendra Sharma{% endblock %}
+
+{% block content %}
+<section class="skills-header py-5 bg-light">
+    <div class="container">
+        <h1 class="display-4 fw-bold">My Skills</h1>
+        <p class="lead">A comprehensive overview of my technical skills and expertise.</p>
+    </div>
+</section>
+
+<section class="skills-content py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <h2>Programming Languages</h2>
+                <div class="skills-list">
+                    {% for language in skills.programming_languages %}
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h6 class="mb-0">{{ language }}</h6>
+                            <span class="text-muted small">
+                                {% if language == 'Python' %}
+                                    Expert
+                                {% elif language == 'JavaScript' %}
+                                    Advanced
+                                {% elif language == 'Java' %}
+                                    Intermediate
+                                {% else %}
+                                    Proficient
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="progress">
+                            {% if language == 'Python' %}
+                                <div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% elif language == 'JavaScript' %}
+                                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% elif language == 'Java' %}
+                                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% else %}
+                                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <h2>Web Technologies</h2>
+                <div class="skills-list">
+                    {% for tech in skills.web_technologies %}
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h6 class="mb-0">{{ tech }}</h6>
+                            <span class="text-muted small">
+                                {% if tech in ['HTML5', 'CSS3'] %}
+                                    Expert
+                                {% elif tech == 'React' %}
+                                    Advanced
+                                {% else %}
+                                    Intermediate
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="progress">
+                            {% if tech in ['HTML5', 'CSS3'] %}
+                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% elif tech == 'React' %}
+                                <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% else %}
+                                <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <h2>Backend Technologies</h2>
+                <div class="skills-list">
+                    {% for tech in skills.backend %}
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h6 class="mb-0">{{ tech }}</h6>
+                            <span class="text-muted small">
+                                {% if tech == 'Flask' %}
+                                    Expert
+                                {% elif tech == 'Django' %}
+                                    Advanced
+                                {% else %}
+                                    Intermediate
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="progress">
+                            {% if tech == 'Flask' %}
+                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% elif tech == 'Django' %}
+                                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% else %}
+                                <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <h2>Databases</h2>
+                <div class="skills-list">
+                    {% for db in skills.databases %}
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h6 class="mb-0">{{ db }}</h6>
+                            <span class="text-muted small">
+                                {% if db == 'MySQL' %}
+                                    Expert
+                                {% elif db == 'PostgreSQL' %}
+                                    Advanced
+                                {% else %}
+                                    Intermediate
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="progress">
+                            {% if db == 'MySQL' %}
+                                <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% elif db == 'PostgreSQL' %}
+                                <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% else %}
+                                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Tools & Technologies</h2>
+                <div class="row">
+                    {% for tool in skills.tools %}
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <i class="fas 
+                                {% if tool == 'Git' %}
+                                    fa-code-branch
+                                {% elif tool == 'Docker' %}
+                                    fa-docker
+                                {% elif tool == 'AWS' %}
+                                    fa-aws
+                                {% elif tool == 'Heroku' %}
+                                    fa-h-square
+                                {% elif tool == 'VS Code' %}
+                                    fa-code
+                                {% else %}
+                                    fa-tools
+                                {% endif %} fa-2x mb-3 text-primary"></i>
+                                <h5 class="card-title">{{ tool }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="skills-certifications py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Certifications</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">AWS Certified Developer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Amazon Web Services</h6>
+                        <p class="card-text">Credential ID: AWS-DEV-12345</p>
+                        <p class="card-text"><small class="text-muted">Issued: January 2022 • Expires: January 2025</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Python Professional</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Python Institute</h6>
+                        <p class="card-text">Credential ID: PCPP-32-123456</p>
+                        <p class="card-text"><small class="text-muted">Issued: March 2021 • No Expiration</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Full Stack Web Developer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Udacity</h6>
+                        <p class="card-text">Credential ID: ND0044</p>
+                        <p class="card-text"><small class="text-muted">Issued: June 2020 • No Expiration</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

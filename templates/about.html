@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}About Me - Nagendra Sharma{% endblock %}
+
+{% block content %}
+<section class="about-header py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center min-vh-50">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold">About Me</h1>
+                <p class="lead">Learn more about my background, experience, and what drives me as a developer.</p>
+            </div>
+            <div class="col-lg-6">
+                <img src="{{ url_for('static', filename='img/about.jpg') }}" alt="About Nagendra Sharma" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-content py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2>My Story</h2>
+                <p>Hello! I'm Nagendra Sharma, a passionate full-stack developer with a strong foundation in web technologies and a keen eye for creating user-friendly applications. My journey in software development began during my college years when I discovered my passion for turning ideas into functional digital solutions.</p>
+                
+                <p>With several years of experience in the industry, I've had the opportunity to work on a diverse range of projects, from small business websites to complex enterprise applications. I thrive in collaborative environments and enjoy tackling challenging problems that push me to expand my skills and knowledge.</p>
+                
+                <h2 class="mt-4">Education</h2>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Bachelor of Technology in Computer Science</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">University Name, 2015-2019</h6>
+                        <p class="card-text">Graduated with honors. Specialized in web development and database systems.</p>
+                    </div>
+                </div>
+                
+                <h2 class="mt-4">Work Experience</h2>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Senior Software Developer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Company Name, 2021-Present</h6>
+                        <p class="card-text">
+                            <ul>
+                                <li>Lead development of multiple web applications using Python, Flask, and React</li>
+                                <li>Implemented CI/CD pipelines to streamline deployment processes</li>
+                                <li>Mentored junior developers and conducted code reviews</li>
+                                <li>Collaborated with cross-functional teams to deliver high-quality software solutions</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Developer</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Previous Company, 2019-2021</h6>
+                        <p class="card-text">
+                            <ul>
+                                <li>Developed and maintained client websites using HTML, CSS, JavaScript, and PHP</li>
+                                <li>Created responsive designs that work across various devices and browsers</li>
+                                <li>Integrated third-party APIs and services to enhance website functionality</li>
+                                <li>Optimized website performance and implemented SEO best practices</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Personal Info</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex">
+                                <i class="fas fa-user me-2 text-primary"></i>
+                                <span>Nagendra Sharma</span>
+                            </li>
+                            <li class="list-group-item d-flex">
+                                <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                                <span>City, Country</span>
+                            </li>
+                            <li class="list-group-item d-flex">
+                                <i class="fas fa-envelope me-2 text-primary"></i>
+                                <span>your.email@example.com</span>
+                            </li>
+                            <li class="list-group-item d-flex">
+                                <i class="fas fa-phone me-2 text-primary"></i>
+                                <span>+1 (123) 456-7890</span>
+                            </li>
+                            <li class="list-group-item d-flex">
+                                <i class="fas fa-language me-2 text-primary"></i>
+                                <span>English, Hindi</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Interests</h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-primary">Web Development</span>
+                            <span class="badge bg-primary">Machine Learning</span>
+                            <span class="badge bg-primary">Open Source</span>
+                            <span class="badge bg-primary">UI/UX Design</span>
+                            <span class="badge bg-primary">Cloud Computing</span>
+                            <span class="badge bg-primary">Blockchain</span>
+                            <span class="badge bg-primary">Photography</span>
+                            <span class="badge bg-primary">Hiking</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Download Resume</h3>
+                        <p class="card-text">Get a copy of my resume for more detailed information about my experience and skills.</p>
+                        <a href="{{ url_for('static', filename='files/resume.pdf') }}" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-download me-2"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">What People Say</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-quote-left fa-2x text-primary me-3"></i>
+                            <div>
+                                <p class="card-text">Nagendra is an exceptional developer who consistently delivers high-quality work. His attention to detail and problem-solving skills are impressive.</p>
+                                <p class="fw-bold mb-0">John Doe</p>
+                                <p class="text-muted">Project Manager, Company Name</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-quote-left fa-2x text-primary me-3"></i>
+                            <div>
+                                <p class="card-text">Working with Nagendra was a pleasure. He understood our requirements perfectly and delivered a solution that exceeded our expectations.</p>
+                                <p class="fw-bold mb-0">Jane Smith</p>
+                                <p class="text-muted">CEO, Startup Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex mb-3">
+                            <i class="fas fa-quote-left fa-2x text-primary me-3"></i>
+                            <div>
+                                <p class="card-text">Nagendra's technical expertise and communication skills make him a valuable asset to any team. He's not just a developer but a true problem solver.</p>
+                                <p class="fw-bold mb-0">Michael Johnson</p>
+                                <p class="text-muted">Tech Lead, Enterprise Corp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
